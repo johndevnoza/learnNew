@@ -1,13 +1,40 @@
 import "./App.css";
 import { BearCounter } from "./components/bearCounter";
 import { Controls } from "./components/incrementButton";
+import { toDoList } from "./stateManagment/zustandTest";
+import { useState } from "react";
 
 function App() {
+  const tasks = toDoList((state) => state.tasks);
+  const addTask = toDoList((state) => state.addTask);
+
+  const [input, setInput] = useState("");
+
+  const handleClick = () => {
+    addTask(input);
+    setInput("");
+  };
+
   return (
-    <>
-      <BearCounter />
-      <Controls />
-    </>
+    <div className="appWrapper">
+      <div className="toDoWrapper">
+        <input
+          value={input}
+          type="text"
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button onClick={handleClick}>ADD Task</button>
+        <ol>
+          {tasks.map((task) => (
+            <li key={task.id}>{task}</li>
+          ))}
+        </ol>
+      </div>
+      <div className="counterWrapper">
+        <BearCounter />
+        <Controls />
+      </div>
+    </div>
   );
 }
 

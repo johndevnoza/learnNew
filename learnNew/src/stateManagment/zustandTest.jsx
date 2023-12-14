@@ -5,3 +5,8 @@ export const useStore = create((set) => ({
   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
   removeAllBears: () => set({ bears: 0 }),
 }));
+
+export const toDoList = create((set) => ({
+  tasks: [],
+  addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
+}));
