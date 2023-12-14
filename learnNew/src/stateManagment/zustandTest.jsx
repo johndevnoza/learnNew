@@ -9,4 +9,5 @@ export const useStore = create((set) => ({
 export const toDoList = create((set) => ({
   tasks: [],
   addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
+  clearTasks: () => set((state) => ({ tasks: [...(state.tasks = "")] })),
 }));
