@@ -5,6 +5,10 @@ const initialState = {
 };
 
 export const useCart = create((set) => ({
+  
+}));
+
+export const useCartLearn = create((set) => ({
   ...initialState,
   addItemToCart: (product) =>
     set((state) => {
