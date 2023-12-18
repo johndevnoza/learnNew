@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  padding: 50px 150px;
   text-align: center;
 }
 
@@ -47,18 +46,21 @@
 }
 .appWrapper {
   display: flex;
-  gap: 175px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 100px;
 }
 .toDoWrapper {
   display: flex;
   gap: 20px;
+  width: 100%;
+  justify-content: space-between;
 }
 input {
   padding: 0.6em 1.2em;
   background-color: #1a1a1a;
   border: 1px solid transparent;
   border-radius: 8px;
-
 }
 input:hover {
   border-color: #646cff;
@@ -74,12 +76,21 @@ input:hover {
   border-radius: 8px;
 }
 .toDoWrapper button {
-   writing-mode: vertical-rl; 
+  writing-mode: vertical-rl;
   text-orientation: upright;
 }
 .counterWrapper {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  width: 100%;
 }
-
+.todoAndCounterWrapper {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  width: 30%;
+}
+.cartAppWrapper {
+  width: 70%;
+}
